@@ -1,5 +1,5 @@
 <div class="login-container">
-  <p class="text-center"><strong>LOGIN</strong></p>
+  <p class="text-center"><strong>LOG IN</strong></p>
   <form class="form" [formGroup]="loginForm">
     <mat-form-field class="form-control">
       <input matInput formControlName="email" type="text" name="email-hasura"/>
@@ -8,9 +8,9 @@
       <input matInput formControlName="password" type="password"/>
     </mat-form-field>
     <div class="form-footer">
-      <button mat-button (click)="onLogin()" class="btn btn-primary ">login</button>
-      <button mat-button (click)="onLoginWithGoogle()" class="btn btn-primary">login with Google</button>
-      <p>Are you a new user? <a routerLink="/signup" class="btn btn-link">SIGNUP</a></p>
+      <button mat-button (click)="onLogin()" class="btn btn-primary ">LOG IN</button>
+      <button mat-button (click)="onLoginWithGoogle()" class="btn btn-primary">LOGIN WITH GOOGLE</button>
+      <p>Are you a new user? <a routerLink="/signup" class="btn btn-link">SIGN UP</a></p>
     </div>
     
   </form>
