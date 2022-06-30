@@ -16,9 +16,9 @@ services:
     restart: always
     environment:
       ## postgres database to store Hasura metadata
-      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://prcenljstplegu:f9d29591febb768f4f9a0e40a68002fd859a4822d37daead586eac7678fa8fe2@ec2-44-206-11-200.compute-1.amazonaws.com:5432/d7doof8mif23m7
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://jxafyidhbrvfoe:477c98276b9a7b7cc70245ad4ef2a3ba8e73b606a9625315f454cf3ab1c5b1ab@ec2-44-195-162-77.compute-1.amazonaws.com:5432/d95h30jjffip31
       ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
-      PG_DATABASE_URL: postgres://prcenljstplegu:f9d29591febb768f4f9a0e40a68002fd859a4822d37daead586eac7678fa8fe2@ec2-44-206-11-200.compute-1.amazonaws.com:5432/d7doof8mif23m7
+      PG_DATABASE_URL: postgres://jxafyidhbrvfoe:477c98276b9a7b7cc70245ad4ef2a3ba8e73b606a9625315f454cf3ab1c5b1ab@ec2-44-195-162-77.compute-1.amazonaws.com:5432/d95h30jjffip31
       ## enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
       ## enable debugging mode. It is recommended to disable this in production

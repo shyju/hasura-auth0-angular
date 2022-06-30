@@ -1,0 +1,1 @@
+CREATE TABLE "public"."users" ("user_id" text NOT NULL, "nickname" text NOT NULL, "last_seen" timestamptz NOT NULL DEFAULT now(), PRIMARY KEY ("user_id") , UNIQUE ("user_id"));COMMENT ON TABLE "public"."users" IS E'user';

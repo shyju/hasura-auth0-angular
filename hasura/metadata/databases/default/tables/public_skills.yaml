@@ -9,16 +9,9 @@ insert_permissions:
         user_id: x-hasura-User-Id
       columns:
         - exprience
-        - skill_name
-        - user_id
-select_permissions:
-  - role: guest
-    permission:
-      columns:
-        - exprience
         - skill_id
         - skill_name
-      filter: {}
+select_permissions:
   - role: user
     permission:
       columns:
@@ -46,27 +39,3 @@ delete_permissions:
       filter:
         user_id:
           _eq: X-Hasura-User-Id
-event_triggers:
-  - name: sendEmail
-    definition:
-      enable_manual: false
-      insert:
-        columns: '*'
-      delete:
-        columns: '*'
-      update:
-        columns: '*'
-    retry_conf:
-      num_retries: 0
-      interval_sec: 10
-      timeout_sec: 60
-    webhook: http://host.docker.internal:3001
-    request_transform:
-      url: '{{$base_url}}/sendEmail'
-      method: POST
-      version: 2
-      query_params:
-        body: Skill table updated
-        to: "+919539394104"
-        from: "+16066444698"
-      template_engine: Kriti
