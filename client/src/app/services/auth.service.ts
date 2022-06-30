@@ -118,15 +118,13 @@ export class AuthService {
 
   public logout(): void {
     // Remove tokens and expiry time
-    this._accessToken = '';
-    this._idToken = '';
-    this._expiresAt = 0;
-    localStorage.clear();
-    sessionStorage.clear();
+   
     this.auth0.logout({
       clientID: 'LegolJ9MALz1tsqIzTrGwKnThhOb1RBk',
       returnTo: environment.auth0.logoutRedirectUri
     });
+    localStorage.clear();
+    sessionStorage.clear();
    
   }
 
