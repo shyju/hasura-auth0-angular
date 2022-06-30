@@ -1,0 +1,17 @@
+<div class="login-container">
+    <p class="text-center"><strong>SIGNUP</strong></p>
+    <form class="form" [formGroup]="signUpForm">
+      <mat-form-field class="form-control">
+        <input matInput formControlName="email" type="text" name="email-hasura"/>
+      </mat-form-field>
+      <mat-form-field class="form-control">
+        <input matInput formControlName="password" type="password"/>
+      </mat-form-field>
+      <div class="form-footer">
+        <button mat-button (click)="onSignUp()" class="btn btn-primary ">SignUp</button>
+        <p>
+            Already a user? <a routerLink="/login" class="btn btn-link">LOGIN</a>
+        </p>
+      </div>
+    </form>
+  </div>

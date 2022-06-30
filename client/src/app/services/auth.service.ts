@@ -57,6 +57,12 @@ export class AuthService {
     this.auth0.signup({email, password, connection: 'Username-Password-Authentication'}, (err, result) => {
         if (err?.statusCode === 400) {
           alert('Email already exists. Try a different email');
+          return;
+        } 
+
+        if (result) {
+          alert('Login with the newly created credentials');
+          this.router.navigate(['/login'])
         }
     })
   }

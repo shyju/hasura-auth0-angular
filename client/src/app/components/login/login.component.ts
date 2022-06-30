@@ -26,11 +26,6 @@ export class LoginComponent implements OnInit {
     this.auth.login(email, password);
   }
 
-  onSignUp() {
-    const {email, password} = this.loginForm.value;
-    this.auth.signUp(email, password);
-  }
-
   onLoginWithGoogle() {
     this.auth.loginWithGoogle()
   }

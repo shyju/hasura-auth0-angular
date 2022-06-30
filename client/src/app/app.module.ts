@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
 import {NgxSpinnerModule} from "ngx-spinner"
+import { SignupComponent } from './components/signup/signup.component';
 
 // import {getAuth} from 'firebase/auth'
 // import {getDatabase} from 'firebase/database';
@@ -30,7 +31,8 @@ import {NgxSpinnerModule} from "ngx-spinner"
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
