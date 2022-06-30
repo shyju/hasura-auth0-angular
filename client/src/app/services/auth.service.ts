@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from '@apollo/client';
 import * as auth0 from 'auth0-js';
+import { environment } from 'client/src/environments/environment';
 import { BehaviorSubject, of } from 'rxjs';
 
 @Injectable({
@@ -19,7 +20,7 @@ export class AuthService {
     clientID: 'LegolJ9MALz1tsqIzTrGwKnThhOb1RBk',
     domain: 'dev-bitgs785.us.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/home',
+    redirectUri: environment.auth0.redirectUri,
     scope: 'openid profile email offline_access',
     // audience: 'http://hasura.io/learn'
   });
@@ -118,7 +119,7 @@ export class AuthService {
     sessionStorage.clear();
     this.auth0.logout({
       clientID: 'LegolJ9MALz1tsqIzTrGwKnThhOb1RBk',
-      returnTo: 'http://localhost:4200/login'
+      returnTo: environment.auth0.logoutRedirectUri
     });
    
   }

@@ -6,6 +6,10 @@ export const environment = {
   production: false,
   hasura: {
     base_url: 'http://localhost:8080/v1/graphql'
+  },
+  auth0: {
+    redirectUri: 'http://localhost:4200/home, https://hasura-angular-auth0.herokuapp.com/home',
+    logoutRedirectUri: 'http://localhost:4200/login, https://hasura-angular-auth0.herokuapp.com/login'
   }
 };
 
