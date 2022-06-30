@@ -8,8 +8,9 @@ import { AuthService } from './services/auth.service';
 import {onError} from "@apollo/client/link/error";
 import { Observable } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from '../environments/environment';
 
-const uri = 'http://localhost:8080/v1/graphql'; // <-- add the URL of the GraphQL server here
+const uri = environment.hasura.base_url; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink, authService: AuthService): ApolloClientOptions<any> {
   
 
