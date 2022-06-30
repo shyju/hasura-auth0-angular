@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       variables: {
         offset: 0,
         limit: 5
-      }
+      },
+      fetchPolicy: 'cache-first'
     });
 
     this.skills = this.postsQuery.valueChanges
