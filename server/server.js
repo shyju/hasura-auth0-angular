@@ -9,10 +9,10 @@ const authToken = process.env.TWILIO_AUTH_TOKEN || 'a8da47722b8bae119a1787c11339
 const client = require('twilio')(accountSid, authToken);
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/client'));
+app.use(express.static('/my-app'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/client/'}),
+    res.sendFile('index.html', {root: './my-app/'}),
 );
 
 app.post('/sendEmail', (req, res) => {

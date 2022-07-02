@@ -1,5 +1,15 @@
 version: '3.6'
 services:
+  ui-node:
+        build:
+          context: .
+          dockerfile: docker/Dockerfile
+        ports:
+          - 4200:3000
+        command: [node, 'server.js']
+        environment:
+          - CLIENT_URL=http://localhost:4200
+          - PORT=3000
   postgres:
     image: postgres:12
     restart: always
