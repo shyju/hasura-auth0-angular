@@ -1,0 +1,11 @@
+<div class="header">
+  <div>
+    <!-- <button class="btn btn-line" routerLink="/login" *ngIf="!auth.isAuthenticated()">LOGIN</button> -->
+    <button class="btn btn-line" *ngIf="auth.isAuthenticated()" (click)="onLogout()">LOGOUT</button>
+  </div>
+  <div *ngIf="auth.isAuthenticated()" class="page-name">Dashboard</div>
+  <div *ngIf="auth.isAuthenticated()">
+    <img src="{{(auth.user$|async)?.picture}}" class="rounded-circle" alt="Cinque Terre">
+    <p>{{(auth.user$ | async)?.name}} </p>
+  </div>
+</div>

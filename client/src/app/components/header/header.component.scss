@@ -1,0 +1,32 @@
+.header {
+    background-color: rgb(165, 72, 49);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-direction: row-reverse;
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+
+    button {
+        font-weight: 600;
+    }
+
+    .page-name {
+        font-size: 14;
+        font-weight: bold;
+        padding: 10px;
+    }
+    p {
+        margin-right: 10px;
+        background: white;
+        color: red;
+        top: -27px;
+        left: 4px;
+        position: relative;
+        height: 28px;
+        text-align: center;
+        font-weight: bold;
+    }
+}

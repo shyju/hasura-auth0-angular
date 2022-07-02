@@ -1,0 +1,48 @@
+<div class="container">
+  <div>
+    <p *ngIf="(skills|async)?.length; else noSkills">Welcome <strong>{{(auth.user$|async)?.name}}</strong>, these are the skills added by you.</p>
+    <ng-template #noSkills>
+      <p>Welcome <strong>{{(auth.user$|async)?.name}}</strong>, You don't have any skills yet.</p>
+    </ng-template>
+  </div>
+  <div class="d-flex flex-column justify-content-between align-items-center">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Skill & Experience</span>
+      </div>
+      <input type="text" placeholder="Enter a skill name" class="form-control" [(ngModel)] = skillName>
+      <input type="number" placeholder="Enter years of experience" class="form-control" [(ngModel)] = skillExperience>
+    </div>
+    <div class="ml-3 add-skill-button">
+      <button class="btn btn-primary" *ngIf="!isEditEnabled" (click)="onAddSkill()">Add Skill</button>
+      <button class="btn btn-primary" *ngIf="isEditEnabled" (click)="onUpdateSkill()">Update Skill</button>
+    </div>
+  </div>
+  <table class="table table-striped table-bordered"  *ngIf="(skills|async)?.length">
+    <thead>
+    <tr>
+      <th scope="col" class="text-center">Skill No.</th>
+      <th scope="col" class="text-center">Skill UUID</th>
+      <th scope="col" class="text-center">Skill Name</th>
+      <th scope="col" class="text-center">Experience (in years)</th>
+      <th scope="col" class="text-center">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let skill of skills|async; let i=index">
+      <th scope="row" class="text-center">{{i+1}}</th>
+      <td class="text-center">
+        {{skill.skill_id}}
+      </td>
+      <td class="text-center">{{skill.skill_name}}</td>
+      <td class="text-center">{{skill.exprience}}</td>
+      <td class="text-center">
+        <button type="button" class="btn btn-info" (click)="onEditSkill(skill.skill_id, skill.skill_name, skill.exprience)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDeleteSkill(skill.skill_id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button  *ngIf="(skills|async)?.length" type="button" class="btn btn-primary" (click)="fetchMore()">Next</button>
+</div>
